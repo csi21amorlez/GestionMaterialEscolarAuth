@@ -5,7 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import gmewApp.dao.Alumno;
 import gmewApp.dao.Portatil;
 
 // TODO: Auto-generated Javadoc

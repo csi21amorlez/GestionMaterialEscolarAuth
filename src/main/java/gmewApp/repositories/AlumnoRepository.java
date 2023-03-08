@@ -5,7 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-
 import gmewApp.dao.Alumno;
 
 // TODO: Auto-generated Javadoc
@@ -14,7 +13,7 @@ import gmewApp.dao.Alumno;
  */
 @Repository
 public interface AlumnoRepository extends CrudRepository<Alumno, Long> {
-	
+
 	/**
 	 * Find alumno by codigo portatil.
 	 *

@@ -16,18 +16,17 @@ import gmevWeb.services.PortatilImpl;
 @Controller
 public class PortatilFormController {
 
-
 	@Autowired
 	DtoToImpl dtoTo;
-	
 
 	@Autowired
 	PortatilImpl portatilRepo;
 
 	/**
-	 * Recibe los datos obtenidos del formulario en un objeto y lo inserta en base de datos.
+	 * Recibe los datos obtenidos del formulario en un objeto y lo inserta en base
+	 * de datos.
 	 *
-	 * @param portatil  portatil
+	 * @param portatil portatil
 	 * @return redireccion a la vista principal de portatiles
 	 */
 	@RequestMapping(value = "/guardarPortatil", method = RequestMethod.POST)
@@ -36,7 +35,7 @@ public class PortatilFormController {
 		try {
 
 			portatilRepo.insertarPortatil(dtoTo.PortatilDtoToDao(portatil));
-			return "redirect:portatiles";
+			return "portatiles";
 		} catch (Exception e) {
 			// TODO: handle exception
 			return null;

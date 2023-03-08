@@ -13,8 +13,8 @@
 
 		<form method="GET" action="findPortatilByAlumno">
 			<div class="form-group">
-				<label for="codAlumno">Código de alumno:</label> <input type="text"
-					class="form-control" name="codAlumno" id="codAlumno" />
+				<label for="codigoAlumno">Código de alumno:</label> 
+				<input type="text" class="form-control" name="codigoAlumno" id="codigoAlumno" />
 			</div>
 			<button type="submit" class="btn btn-primary">Buscar</button>
 		</form>

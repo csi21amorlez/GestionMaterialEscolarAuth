@@ -29,8 +29,9 @@ public class AlumnoFormController {
 
 		try {
 			System.out.println("Test= " + alumno.getCodigoAlumno());
+			System.out.println("Test 21" + alumno.getPortatilId());
 			alumnoRepo.insertarAlumno(dtoTo.AlumnoDtoToDao(alumno));
-			return "redirect:listAlumnos";
+			return "alumnos";
 		} catch (Exception e) {
 			// TODO: handle exception
 			return null;

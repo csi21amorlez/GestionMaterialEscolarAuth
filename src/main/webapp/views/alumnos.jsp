@@ -27,18 +27,19 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${listAlumno}" var="a">
+				<c:forEach items="${listAlumno}" var="alumno">
 					<tr>
-						<td>${a.nombreCompleto}</td>
-						<td>${a.codigoAlumno}</td>
-						<td>${a.numeroTelefono}</td>
-						<td><c:if test="${a.portatil != null}">
-                                ${a.portatil.marca} ${a.portatil.modelo} (${a.portatil.codigo})
+						<td>${alumno.nombreCompleto}</td>
+						<td>${alumno.codigoAlumno}</td>
+						<td>${alumno.numeroTelefono}</td>
+						<td><c:if test="${alumno.portatil != null}">
+                                ${alumno.portatil.marca} ${alumno.portatil.modelo} (${alumno.portatil.codigo})
                             </c:if></td>
 						<td>
 							<form method="post" action="eliminarAlumno" id="eliminarAlumno">
-								<input type="hidden" name="id" value="${a.id}" />
-								<button type="submit" class="btn btn-danger" onclick="confirmarEliminacion()">Eliminar</button>
+								<input type="hidden" name="alumno" value="${alumno}" />
+								<button type="submit" class="btn btn-danger"
+									onclick="confirmarEliminacion()">Eliminar</button>
 							</form>
 						</td>
 					</tr>
@@ -46,5 +47,3 @@
 			</tbody>
 		</table>
 	</div>
-
-	<

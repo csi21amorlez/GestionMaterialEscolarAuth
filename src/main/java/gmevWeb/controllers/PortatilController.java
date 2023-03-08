@@ -39,17 +39,19 @@ public class PortatilController {
 	 * @return redireccion a la vista portatilByAlumno
 	 */
 	@RequestMapping(value = "/findPortatilByAlumno")
-	public String findPortatilByAlumno(Model model, @Param(value = "codAlumno") String codAlumno) {
+	public String findPortatilByAlumno(Model model, @Param("codigoAlumno") String codigoAlumno) {
 
-		PortatilDTO portatil = portatilRepo.findPortatilByAlumno(codAlumno);
+		System.out.println("Test portatil" + codigoAlumno);		
+		PortatilDTO portatil = portatilRepo.findPortatilByAlumno(codigoAlumno);
+		
 
 		if (portatil != null) {
 			model.addAttribute("portatil", portatil);
 		} else {
-			model.addAttribute("mensaje", "No se encontró ningún portatil asignado al alumno con código " + codAlumno);
+			model.addAttribute("mensaje", "No se encontró ningún portatil asignado al alumno con código " + codigoAlumno);
 		}
 
-		return "redirect:portatilByAlumno";
+		return "portatilByAlumno";
 
 	}
 

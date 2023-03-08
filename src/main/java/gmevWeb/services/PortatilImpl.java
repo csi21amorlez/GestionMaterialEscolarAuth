@@ -10,9 +10,7 @@ import org.springframework.stereotype.Component;
 import gmevWeb.dto.PortatilDTO;
 import gmevWeb.dto.converters.DtoToImpl;
 import gmevWeb.dto.converters.ToDtoImpl;
-import gmewApp.dao.Alumno;
 import gmewApp.dao.Portatil;
-
 import gmewApp.repositories.PortatilRepository;
 
 @Component

@@ -74,9 +74,10 @@ public class AlumnoController {
 	 * @return redireccion a la vista alumnoByPortatil
 	 */
 	@RequestMapping(value = "/findAlumnoByPortatil")
-	public String findAlumnoByPortatil(Model model, @Param(value = "codPortatil") String codPortatil) {
+	public String findAlumnoByPortatil(Model model, @Param("codPortatil") String codPortatil) {
 
-		AlumnoDTO alumno = alumnoRepo.findAlumnoByPortatil(codPortatil);
+		System.out.println("Codigo poratil: " + codPortatil);
+		AlumnoDTO alumno = alumnoRepo.findAlumnoByPortatil(codPortatil);	
 
 		if (alumno != null) {
 			model.addAttribute("alumno", alumno);
@@ -85,7 +86,7 @@ public class AlumnoController {
 					"No se encontró ningún alumno asignado al portátil con código " + codPortatil);
 		}
 
-		return "redirect:alumnoByPortatil";
+		return "alumnoByPortatil";
 	}
 
 	/**
@@ -119,9 +120,10 @@ public class AlumnoController {
 	* @return redireccion a la vista de alumnos
 	 */
 	@RequestMapping(value = "/eliminarAlumno", method = RequestMethod.POST)
-	public String eliminarAlumno(@Param(value = "alumno") AlumnoDTO a) {
+	public String eliminarAlumno(@Param(value = "alumno") AlumnoDTO alumno) {
 		try {
-			alumnoRepo.deleteAlumno(dtoTo.AlumnoDtoToDao(a));
+			System.out.println(alumno.getId());
+			alumnoRepo.deleteAlumno(dtoTo.AlumnoDtoToDao(alumno));
 			return "alumnos";
 		} catch (Exception e) {
 			// TODO: handle exception

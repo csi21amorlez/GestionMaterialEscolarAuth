@@ -10,7 +10,6 @@
 	<div class="container">
 		<h1>Formulario de Alumno</h1>
 		<form method="post" action="guardarAlumno">
-
 			<div class="form-group">
 				<label for="nombreCompleto">Nombre Completo</label> <input
 					type="text" class="form-control" id="nombreCompleto"
@@ -34,7 +33,7 @@
 
 			<div class="form-group">
 				<label for="portatilId">Portátil asignado</label> <select
-					class="form-control" id="portatilId" name="alumno.portatilId" path="alumno.portatilId">
+					class="form-control" id="portatilId" name="portatilId" path="portatilId">
 					<c:forEach items="${model.listPortatil}" var="portatil">
 						<option value="${portatil.id}">${portatil.marca}
 							${portatil.modelo} (${portatil.codigo})</option>
