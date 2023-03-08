@@ -33,7 +33,6 @@ public class PortatilFormController {
 	public String guardarPortatil(PortatilDTO portatil) {
 
 		try {
-
 			portatilRepo.insertarPortatil(dtoTo.PortatilDtoToDao(portatil));
 			return "portatiles";
 		} catch (Exception e) {

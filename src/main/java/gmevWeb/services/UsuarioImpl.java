@@ -20,25 +20,44 @@ public class UsuarioImpl implements UsuarioService {
 
 	@Override
 	public UsuarioDTO findById(long id) {
-
-		return toDto.usuarioToDto(usuRepo.findById(id).orElse(null));
+		try {
+			return toDto.usuarioToDto(usuRepo.findById(id).orElse(null));
+		} catch (Exception e) {
+			// TODO: handle exception
+			return null;
+		}
 
 	}
 
 	@Override
 	public UsuarioDTO login(String codUsuario, String claveUsuario) {
-		return toDto.usuarioToDto(usuRepo.findUsuarioByPasswordAndCod(codUsuario, claveUsuario));
+		
+		try {
+			return toDto.usuarioToDto(usuRepo.findUsuarioByPasswordAndCod(codUsuario, claveUsuario));			
+		} catch (Exception e) {
+			// TODO: handle exception
+			return null;
+		}
+		
 	}
 
 	@Override
 	public void eliminarUsuario(UsuarioDTO usu) {
-		usuRepo.delete(dtoTo.usuarioDtoToDao(usu));
+		try{
+			usuRepo.delete(dtoTo.usuarioDtoToDao(usu));
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
 
 	}
 
 	@Override
 	public void createUsuario(UsuarioDTO usu) {
-		usuRepo.save(dtoTo.usuarioDtoToDao(usu));
+		try{
+			usuRepo.save(dtoTo.usuarioDtoToDao(usu));
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 }
