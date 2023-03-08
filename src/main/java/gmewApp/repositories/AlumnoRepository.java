@@ -22,4 +22,6 @@ public interface AlumnoRepository extends CrudRepository<Alumno, Long> {
 	 */
 	@Query("SELECT p.alumno FROM Portatil p WHERE p.codigo = :codigo")
 	Alumno findAlumnoByCodigoPortatil(@Param("codigo") String codigo);
+	
+	
 }

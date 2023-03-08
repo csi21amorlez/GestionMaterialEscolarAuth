@@ -4,8 +4,12 @@ import java.util.ArrayList;
 
 import gmevWeb.dto.AlumnoDTO;
 import gmevWeb.dto.PortatilDTO;
+import gmevWeb.dto.RolDTO;
+import gmevWeb.dto.UsuarioDTO;
 import gmewApp.dao.Alumno;
 import gmewApp.dao.Portatil;
+import gmewApp.dao.Rol;
+import gmewApp.dao.Usuario;
 
 
 // TODO: Auto-generated Javadoc
@@ -45,5 +49,38 @@ public AlumnoDTO AlumnoToDto(Alumno alumno);
 	 * @return the array list
 	 */
 	public ArrayList<PortatilDTO> ListPortatilToDto(ArrayList<Portatil> listPortatil);
+	
+	/**
+	 * List usuario to dto.
+	 *
+	 * @param listUsuario the list usuario
+	 * @return the array list
+	 */
+	public ArrayList<UsuarioDTO> ListUsuarioToDto(ArrayList<Usuario> listUsuario);
+	
+	/**
+	 * Usuario to dto.
+	 *
+	 * @param usuario the usuario
+	 * @return the usuario DTO
+	 */
+	public UsuarioDTO usuarioToDto(Usuario usuario);
+	
+	/**
+	 * List rol to dto.
+	 *
+	 * @param listRoles the list roles
+	 * @return the array list
+	 */
+	public ArrayList<RolDTO> listRolToDto(ArrayList<Rol> listRoles);
+	
+	/**
+	 * Rol to dto.
+	 *
+	 * @param rol the rol
+	 * @return the rol DTO
+	 */
+	public RolDTO rolToDto(Rol rol);
+	
 
 }

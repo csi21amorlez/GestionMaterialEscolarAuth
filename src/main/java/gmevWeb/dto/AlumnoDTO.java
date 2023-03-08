@@ -1,5 +1,7 @@
 package gmevWeb.dto;
 
+import java.util.Calendar;
+
 import org.springframework.stereotype.Component;
 
 // TODO: Auto-generated Javadoc
@@ -27,6 +29,48 @@ public class AlumnoDTO {
 	/** The portatil. */
 	private PortatilDTO portatil;
 
+	/** The md uuid. */
+	private String mdUuid;
+	
+	/** The md date. */
+	private Calendar mdDate;
+
+	/**
+	 * Gets the md uuid.
+	 *
+	 * @return the md uuid
+	 */
+	public String getMdUuid() {
+		return mdUuid;
+	}
+
+	/**
+	 * Sets the md uuid.
+	 *
+	 * @param mdUuid the new md uuid
+	 */
+	public void setMdUuid(String mdUuid) {
+		this.mdUuid = mdUuid;
+	}
+
+	/**
+	 * Gets the md date.
+	 *
+	 * @return the md date
+	 */
+	public Calendar getMdDate() {
+		return mdDate;
+	}
+
+	/**
+	 * Sets the md date.
+	 *
+	 * @param mdDate the new md date
+	 */
+	public void setMdDate(Calendar mdDate) {
+		this.mdDate = mdDate;
+	}
+
 	/**
 	 * Gets the portatil.
 	 *
@@ -45,7 +89,6 @@ public class AlumnoDTO {
 		this.portatil = portatil;
 	}
 
-	
 	/**
 	 * Gets the id.
 	 *

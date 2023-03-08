@@ -1,12 +1,17 @@
 package gmevWeb.dto.converters;
+
 import java.util.ArrayList;
 
 import org.springframework.stereotype.Component;
 
 import gmevWeb.dto.AlumnoDTO;
 import gmevWeb.dto.PortatilDTO;
+import gmevWeb.dto.RolDTO;
+import gmevWeb.dto.UsuarioDTO;
 import gmewApp.dao.Alumno;
 import gmewApp.dao.Portatil;
+import gmewApp.dao.Rol;
+import gmewApp.dao.Usuario;
 
 @Component
 public class ToDtoImpl implements ToDtoService {
@@ -54,6 +59,49 @@ public class ToDtoImpl implements ToDtoService {
 			listDto.add(PortatilToDto(portatil));
 		}
 		return listDto;
+	}
+
+	@Override
+	public ArrayList<UsuarioDTO> ListUsuarioToDto(ArrayList<Usuario> listUsuario) {
+		ArrayList<UsuarioDTO> listDTO = new ArrayList<UsuarioDTO>();
+
+		for (Usuario usu : listUsuario) {
+			listDTO.add(usuarioToDto(usu));
+		}
+
+		return listDTO;
+	}
+
+	@Override
+	public UsuarioDTO usuarioToDto(Usuario usuario) {
+		UsuarioDTO dto = new UsuarioDTO();
+		dto.setMdDate(usuario.getMdDate());
+		dto.setMdUuid(usuario.getMdUuid());
+		dto.setId(usuario.getId());
+		dto.setClaveUsuario(usuario.getClaveUsuario());
+		dto.setCodUsuario(usuario.getCodUsuario());
+		dto.setRol(rolToDto(usuario.getRolUsuario()));
+		return dto;
+	}
+
+	@Override
+	public ArrayList<RolDTO> listRolToDto(ArrayList<Rol> listRoles) {
+		ArrayList<RolDTO> listDTO = new ArrayList<RolDTO>();
+
+		for (Rol rol : listRoles) {
+			listDTO.add(rolToDto(rol));
+		}
+
+		return listDTO;
+	}
+
+	@Override
+	public RolDTO rolToDto(Rol rol) {
+		RolDTO dto = new RolDTO();
+		dto.setId(rol.getId());
+		dto.setDescRol(rol.getDescRol());
+
+		return dto;
 	}
 
 }
